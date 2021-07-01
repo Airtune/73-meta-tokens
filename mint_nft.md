@@ -33,6 +33,8 @@ representative: send#mint2 block hash as address used as NFT mint 2 ID
 
 ```
 {
+  "command": "mint_nft",
+  "version": "0.0.0",
   "title": "Banano with Apple market cap",
   "issuer": "ban_3airtunegymgr6b8t9b8muh7upg39bcheahxqwkbtu96ux69pzn1idcu34wz",
   "max_supply": 1900,
