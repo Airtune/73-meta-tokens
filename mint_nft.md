@@ -1,20 +1,21 @@
 # Meta network NFTs on Banano
 
 ## Mint NFT on Banano
-
+```
 change#priming
 representative: ban_1mintnonfungib1etoken1919111111111111111111111111111wraarjmb
 
 change#ipfs
 representative: IPFS CID for NFT on-chain properties
+```
 
 ## Send newly minted NFT
 ```
 send#mint1
-representative: change#ipfs
+representative: change#ipfs block hash as address
 
 send#mint2
-representative: change#ipfs
+representative: change#ipfs block hash as address
 ```
 
 ## Receive and send NFT
@@ -23,7 +24,7 @@ receive
 link: send#mint2
 
 send
-representative: send#mint2 block hash as address used as NFT mint 2 id
+representative: send#mint2 block hash as address used as NFT mint 2 ID
 ```
 
 ### NFT on-chain properties
