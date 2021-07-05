@@ -29,6 +29,8 @@ representative: send#mint2 block hash as address used as NFT mint 2 ID
 
 ### NFT on-chain properties
 
+Minimal properties of on-chain behaviour and a link to NFT data on IPFS like tip addresses, description, and art.
+
 ### JSON Example
 
 ```
@@ -37,46 +39,49 @@ representative: send#mint2 block hash as address used as NFT mint 2 ID
   "version": "0.0.0",
   "title": "Banano with Apple market cap",
   "issuer": "ban_3airtunegymgr6b8t9b8muh7upg39bcheahxqwkbtu96ux69pzn1idcu34wz",
-  "max_supply": 1900,
-  "backing_raw": 100000000000000000000000000,
-  "ifps_cid": "QmSexmL78HCBZh4BCH2A3vgo3WFvrhoQgQTKGMwtsgvhjw",
-  "recommended_tips": [
-    {
-      "account": "ban_3airtunegymgr6b8t9b8muh7upg39bcheahxqwkbtu96ux69pzn1idcu34wz",
-      "amount_per_mille": 19
-    }
-  ]
+  "max_supply": "1900",
+  "ifps_cid": "QmSexmL78HCBZh4BCH2A3vgo3WFvrhoQgQTKGMwtsgvhjw"
 }
 ```
 
 #### JSON Schema
 ```
 {
-  "title": "NFT properties",
-  "description": "JSON representation of the properties of a NFT.",
+  "title": "Mint NFT meta command",
+  "description": "Minimal JSON representation of the on-chain properties.",
   "type": "object",
   "properties": {
-    "title": {
+    "command": {
       "type": "string",
-      "title": "NFT title",
-      "description": "A short human-friendly text to help identify the NFT type."
+      "title": "Command to be executed by meta node.",
+      "description": "Possible commands: mint_nft",
+      "pattern": "mint_nft"
+    },
+    "version": {
+      "type": "string",
+      "title": "Version of protocol",
+      "description": "Used to distinguish between different versions of the meta command protocol.",
+      "minLength": 5,
+      "maxLength": 255
+    },
+    "schema_title": {
+      "type": "string",
+      "title": "NFT schema title",
+      "description": "A short human-friendly text to help identify the NFT schema.",
+      "minLength": 1,
+      "maxLength": 255
     },
     "issuer": {
       "type": "string",
-      "title": "Account minting the NFT on Banano"
+      "title": "Account minting the NFT on Banano. Used for verification during minting.",
+      "minLength": 64,
+      "maxLength": 64
     },
     "max_supply": {
-      "type": "integer",
+      "type": "string",
       "description": "Max supply limit. If this property isn't present the supply is unlimited.",
-      "minimum": 1,
-      "maximum": 100_000_000_000.0
-    },
-    "backing_raw": {
-      "title": "Backing",
-      "description": "Specific amount of raw required to send NFT."
-      "type": "integer",
-      "minimum": 1,
-      "default": 1
+      "minLength": 1,
+      "maxLength": 39
     },
     "ipfs_cid": {
       "title": "IPFS CID",
@@ -92,29 +97,27 @@ representative: send#mint2 block hash as address used as NFT mint 2 ID
       "title": "Hyperdrive discovery key",
       "description": "For client to find peers sharing the Hyperdrive on Hypercore.",
       "type": "string"
-    },
-    "recommended_tips": {
-      "title": "List of addresses to recommend tipping during trades.",
-      "type": "array",
-      "items": {
-        "type": "object",
-        "items": {
-          "properties": {
-            "account": {
-              "type": "string",
-              "title": "Banano address to recommend tipping during trades."
-            },
-            "amount_per_mille": {
-              "type": "integer",
-              "title": "Recommended tip amount per mille for trades.",
-              "minimum": 0,
-              "maximum": 190
-            }
-          }
-        }
-      }
     }
   },
-  required: ["title"]
+  required: ["title", "issuer"]
+}
+```
+
+### NFT data
+
+Data that can be fetched by the client that isn't required by the meta node.
+
+### JSON Example
+
+```
+{
+  "description": "Image of the unlikely event that Banano will exceed Apple's market capitalization.",
+  "image_ipfs_cid": "QmSexmL78HCBZh4BCH2A3vgo3WFvrhoQgQTKGMwtsgvhjw",
+  "tips": [
+    {
+      "title": "Original taker of screenshot: Airtune.",
+      "account": "ban_3airtunegymgr6b8t9b8muh7upg39bcheahxqwkbtu96ux69pzn1idcu34wz"
+    }
+  ]
 }
 ```
