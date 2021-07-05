@@ -99,7 +99,7 @@ Minimal properties of on-chain behaviour and a link to NFT data on IPFS like tip
       "type": "string"
     }
   },
-  required: ["title", "issuer"]
+  required: ["command", "version", "title", "issuer"]
 }
 ```
 
