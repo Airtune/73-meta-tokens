@@ -64,7 +64,7 @@ Minimal properties of on-chain behaviour and a link to NFT data on IPFS like tip
       "minLength": 5,
       "maxLength": 255
     },
-    "schema_title": {
+    "title": {
       "type": "string",
       "title": "NFT schema title",
       "description": "A short human-friendly text to help identify the NFT schema.",
