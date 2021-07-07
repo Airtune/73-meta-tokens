@@ -1,9 +1,12 @@
 # Meta network NFTs on Banano
 
-## Prime account for minting NFTs
+## Subscribe account to meta nodes
+Sending to the subscribe address will add the sending account to a watch list on the meta nodes.
+
+Any change blocks will be inspected to see if they include a command on IPFS.
 ```
-send#priming
-recipient: ban_1mintnonfungib1etoken1919111111111111111111111111111wraarjmb
+send#subscribe
+recipient: ban_1metanodesubscription1111111111111111111111111111111hx48xsub
 ```
 
 ## Mint NFT
