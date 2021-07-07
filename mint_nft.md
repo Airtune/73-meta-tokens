@@ -97,7 +97,7 @@ Minimal properties of on-chain behaviour and a link to NFT data on IPFS like tip
       "maxLength": 39
     },
     "ipfs_cid": {
-      "title": "IPFS CID",
+      "title": "IPFS CID for NFT client data",
       "description": "For client to fetch NFT data like artwork, text, and meta data on IPFS.",
       "type": "string"
     },
@@ -116,7 +116,7 @@ Minimal properties of on-chain behaviour and a link to NFT data on IPFS like tip
 }
 ```
 
-### NFT data
+### NFT client data
 
 Data that can be fetched by the client that isn't required by the meta node.
 The IPFS CID for this NFT data is stored in `ipfs_cid` in the NFT on-chain properties json.
