@@ -1,14 +1,5 @@
 # Meta network NFTs on Banano
 
-## Subscribe account to meta nodes
-Sending to the subscribe address will add the sending account to a watch list on the meta nodes.
-
-Any change blocks will be inspected to see if they contain a command on IPFS.
-```
-send#subscribe
-recipient: ban_1metanodesubscription1111111111111111111111111111111hx48xsub
-```
-
 ## Mint NFT
 ```
 change#ipfs
