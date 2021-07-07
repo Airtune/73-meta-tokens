@@ -1,12 +1,15 @@
 # Meta network NFTs on Banano
 
-## Mint NFT on Banano
+## Prime account for minting NFTs
 ```
-change#priming
-representative: ban_1mintnonfungib1etoken1919111111111111111111111111111wraarjmb
+send#priming
+recipient: ban_1mintnonfungib1etoken1919111111111111111111111111111wraarjmb
+```
 
+## Mint NFT
+```
 change#ipfs
-representative: IPFS CID for NFT on-chain properties
+recipient: IPFS CID for NFT on-chain properties
 ```
 
 ## Send newly minted NFT
@@ -37,10 +40,11 @@ Minimal properties of on-chain behaviour and a link to NFT data on IPFS like tip
 {
   "command": "mint_nft",
   "version": "0.0.0",
-  "title": "Banano with Apple market cap",
-  "issuer": "ban_3airtunegymgr6b8t9b8muh7upg39bcheahxqwkbtu96ux69pzn1idcu34wz",
-  "max_supply": "1900",
-  "ifps_cid": "QmSexmL78HCBZh4BCH2A3vgo3WFvrhoQgQTKGMwtsgvhjw"
+  "title": "Camo Banano Volcano",
+  "issuer": "ban_1coranoshiqdentfbwkfo7fxzgg1jhz6m33pt9aa8497xxfageuskroocdxa",
+  "max_supply": "1",
+  "ifps_cid": "QmbzTMo42KADUbLwc43KR9Se6aV3N6wfKqFbSr2qN1gJqR",
+  "mint_previous": "F61A79F286ABC5CC01D3D09686F0567812B889A5C63ADE0E82DD30F3B2D96463"
 }
 ```
 
@@ -71,6 +75,12 @@ Minimal properties of on-chain behaviour and a link to NFT data on IPFS like tip
       "minLength": 1,
       "maxLength": 255
     },
+    "mint_previous": {
+      "type": "string",
+      "title": "Previous block hash for the mint block.",
+      "minLength": 64,
+      "maxLength": 64
+    },
     "issuer": {
       "type": "string",
       "title": "Account minting the NFT on Banano. Used for verification during minting.",
@@ -99,7 +109,7 @@ Minimal properties of on-chain behaviour and a link to NFT data on IPFS like tip
       "type": "string"
     }
   },
-  required: ["command", "version", "title", "issuer"]
+  required: ["command", "version", "title", "mint_previous", "issuer"]
 }
 ```
 
@@ -111,12 +121,12 @@ Data that can be fetched by the client that isn't required by the meta node.
 
 ```
 {
-  "description": "Image of the unlikely event that Banano will exceed Apple's market capitalization.",
-  "image_ipfs_cid": "QmSexmL78HCBZh4BCH2A3vgo3WFvrhoQgQTKGMwtsgvhjw",
+  "description": "Image of Coranos painting a volcano that becomes a real volcano.",
+  "image_ipfs_cid": "QmbzTMo42KADUbLwc43KR9Se6aV3N6wfKqFbSr2qN1gJqR",
   "tips": [
     {
-      "title": "Original taker of screenshot: Airtune.",
-      "account": "ban_3airtunegymgr6b8t9b8muh7upg39bcheahxqwkbtu96ux69pzn1idcu34wz"
+      "title": "Coranos",
+      "account": "ban_1coranoshiqdentfbwkfo7fxzgg1jhz6m33pt9aa8497xxfageuskroocdxa"
     }
   ]
 }
