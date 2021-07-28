@@ -32,20 +32,20 @@ Minimal properties of on-chain behaviour and a link to NFT data on IPFS like tip
 
 ```
 {
-  "command": "mint_nft",
-  "version": "0.0.0",
+  "command": "nft_template",
+  "version": "0.0.1",
   "title": "Camo Banano Volcano",
   "issuer": "ban_1coranoshiqdentfbwkfo7fxzgg1jhz6m33pt9aa8497xxfageuskroocdxa",
   "max_supply": "1",
   "ifps_cid": "QmbzTMo42KADUbLwc43KR9Se6aV3N6wfKqFbSr2qN1gJqR",
-  "mint_previous": "F61A79F286ABC5CC01D3D09686F0567812B889A5C63ADE0E82DD30F3B2D96463"
+  "template_previous": "F61A79F286ABC5CC01D3D09686F0567812B889A5C63ADE0E82DD30F3B2D96463"
 }
 ```
 
 #### JSON Schema
 ```
 {
-  "title": "Mint NFT meta command",
+  "title": "Make NFT template meta command",
   "description": "Minimal JSON representation of the on-chain properties.",
   "type": "object",
   "properties": {
@@ -53,7 +53,7 @@ Minimal properties of on-chain behaviour and a link to NFT data on IPFS like tip
       "type": "string",
       "title": "Command to be executed by meta node.",
       "description": "Possible commands: mint_nft",
-      "pattern": "mint_nft"
+      "pattern": "nft_template"
     },
     "version": {
       "type": "string",
@@ -69,7 +69,7 @@ Minimal properties of on-chain behaviour and a link to NFT data on IPFS like tip
       "minLength": 1,
       "maxLength": 255
     },
-    "mint_previous": {
+    "template_previous": {
       "type": "string",
       "title": "Previous block hash for the mint block.",
       "minLength": 64,
@@ -89,21 +89,11 @@ Minimal properties of on-chain behaviour and a link to NFT data on IPFS like tip
     },
     "ipfs_cid": {
       "title": "IPFS CID for NFT client data",
-      "description": "For client to fetch NFT data like artwork, text, and meta data on IPFS.",
-      "type": "string"
-    },
-    "hyperdrive_key": {
-      "title": "Hyperdrive public key",
-      "description": "For client to fetch NFT data like artwork, text, and meta data on Hypercore.",
-      "type": "string"
-    },
-    "hyperdrive_discovery_key": {
-      "title": "Hyperdrive discovery key",
-      "description": "For client to find peers sharing the Hyperdrive on Hypercore.",
+      "description": "For client to fetch NFT data like artwork, text, and meta data on IPFS. All data that isn't related to on-chain properties.",
       "type": "string"
     }
   },
-  required: ["command", "version", "title", "mint_previous", "issuer"]
+  required: ["command", "version", "title", "template_previous", "issuer"]
 }
 ```
 
