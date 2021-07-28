@@ -69,9 +69,9 @@ Minimal properties of on-chain behaviour and a link to NFT data on IPFS like tip
       "minLength": 1,
       "maxLength": 255
     },
-    "template_previous": {
+    "previous": {
       "type": "string",
-      "title": "Previous block hash for the mint block.",
+      "title": "Previous block hash for the template block.",
       "minLength": 64,
       "maxLength": 64
     },
@@ -93,7 +93,7 @@ Minimal properties of on-chain behaviour and a link to NFT data on IPFS like tip
       "type": "string"
     }
   },
-  required: ["command", "version", "title", "template_previous", "issuer"]
+  required: ["command", "version", "title", "previous", "issuer"]
 }
 ```
 
