@@ -37,7 +37,7 @@ Minimal properties of on-chain behaviour and a link to NFT data on IPFS like tip
   "title": "Camo Banano Volcano",
   "issuer": "ban_1coranoshiqdentfbwkfo7fxzgg1jhz6m33pt9aa8497xxfageuskroocdxa",
   "max_supply": "1",
-  "ifps_cid": "QmbzTMo42KADUbLwc43KR9Se6aV3N6wfKqFbSr2qN1gJqR",
+  "art_data_ifps_cid": "QmbzTMo42KADUbLwc43KR9Se6aV3N6wfKqFbSr2qN1gJqR",
   "previous": "F61A79F286ABC5CC01D3D09686F0567812B889A5C63ADE0E82DD30F3B2D96463"
 }
 ```
@@ -87,8 +87,8 @@ Minimal properties of on-chain behaviour and a link to NFT data on IPFS like tip
       "minLength": 1,
       "maxLength": 39
     },
-    "ipfs_cid": {
-      "title": "IPFS CID for NFT client data",
+    "art_data_ifps_cid": {
+      "title": "IPFS CID for NFT art data",
       "description": "For client to fetch NFT data like artwork, text, and meta data on IPFS. All data that isn't related to on-chain properties.",
       "type": "string"
     }
@@ -97,10 +97,10 @@ Minimal properties of on-chain behaviour and a link to NFT data on IPFS like tip
 }
 ```
 
-### NFT client data
+### Art data (wip)
 
 Data that can be fetched by the client that isn't required by the meta node.
-The IPFS CID for this NFT data is stored in `ipfs_cid` in the NFT on-chain properties json.
+The IPFS CID for this NFT data is stored in `art_data_ifps_cid` in the NFT on-chain properties json.
 
 ### JSON Example
 
