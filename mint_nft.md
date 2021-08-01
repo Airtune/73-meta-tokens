@@ -97,7 +97,7 @@ Minimal properties of on-chain behaviour and a link to NFT data on IPFS like tip
 }
 ```
 
-### Art data (wip)
+### Art data (ERC-721 or ERC-1155)
 
 Data that can be fetched by the client that isn't required by the meta node.
 The IPFS CID for this NFT data is stored in `art_data_ifps_cid` in the NFT on-chain properties json.
@@ -106,13 +106,16 @@ The IPFS CID for this NFT data is stored in `art_data_ifps_cid` in the NFT on-ch
 
 ```
 {
+  "name: "Inception",
   "description": "Image of Coranos painting a volcano that becomes a real volcano.",
-  "image_ipfs_cid": "QmbzTMo42KADUbLwc43KR9Se6aV3N6wfKqFbSr2qN1gJqR",
-  "tips": [
-    {
-      "title": "Coranos",
-      "account": "ban_1coranoshiqdentfbwkfo7fxzgg1jhz6m33pt9aa8497xxfageuskroocdxa"
-    }
-  ]
+  "image": "ipfs://QmbzTMo42KADUbLwc43KR9Se6aV3N6wfKqFbSr2qN1gJqR",
+  "properties": {
+    "tips": [
+      {
+        "title": "Coranos",
+        "account": "ban_1coranoshiqdentfbwkfo7fxzgg1jhz6m33pt9aa8497xxfageuskroocdxa"
+      }
+    ]
+  }
 }
 ```
