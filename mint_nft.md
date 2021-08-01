@@ -97,7 +97,7 @@ Minimal properties of on-chain behaviour and a link to NFT data on IPFS like tip
 }
 ```
 
-### Art data (ERC-721 or ERC-1155)
+### Art data (ERC-721 or ERC-1155 Metadata JSON)
 
 Data that can be fetched by the client that isn't required by the meta node.
 The IPFS CID for this NFT data is stored in `art_data_ifps_cid` in the NFT on-chain properties json.
