@@ -3,7 +3,7 @@
 ## Mint NFT
 ```
 change#ipfs
-recipient: IPFS CID for NFT on-chain properties
+representative: IPFS CID for NFT on-chain properties
 ```
 
 ## Send newly minted NFT
