@@ -13,7 +13,7 @@ Account B blocks:
 
 
 Account A blocks:
-* `send#prime      previous: 3   hash: 4   recipient: asset   representative: hash 25`
+* `send#primeif    previous: 3   hash: 4   recipient: asset   representative: hash 25`
 * `send#assetif    previous: 4   hash: 5   recipient: B       representative: asset`
 
 * `change#abortA   previous: 3   hash: 6`
@@ -22,7 +22,7 @@ Account A blocks:
 
 ## Block explanations
 
-### Account A `send#prime`
+### Account A `send#primeif`
 This block comes before `send#assetif`. It changes the properties of `send#assetif` from a normal
 send to a conditional send.
 
@@ -46,16 +46,16 @@ Cancels the trade when confirmed by making sure `send#assetif` could never be co
 
 ### 1) Sign and share cancel blocks
   * B signs `change#abortB` and shares the signed block with A
-  * A signs `send#prime`, `change#abortA`, `change#cancelA` and shares the signed blocks with B
+  * A signs `send#primeif`, `change#abortA`, `change#cancelA` and shares the signed blocks with B
 
-A and B can now submit `change#abortA` to abort the trade and invalidate `send#prime`.
+A and B can now submit `change#abortA` to abort the trade and invalidate `send#primeif`.
 
 A and B can now submit `change#abortB` to abort the trade and invalidate `send#19BAN`.
 
-A and B can now submit `send#prime` to prime the trade.
+A and B can now submit `send#primeif` to prime the trade.
 
 
-### 2) A or B submits `send#prime` and wait for confirmation.
+### 2) A or B submits `send#primeif` and wait for confirmation.
 
 A and B can now submit `change#cancelA` to cancel the trade and invalidate `send#assetif`
 
