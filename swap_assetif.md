@@ -23,7 +23,7 @@ Account A blocks:
 # Block explanations
 
 ## Account A `send#prime`
-Blocks comes before `send#assetif`. It changes the properties of `send#assetif` from a normal
+This block comes before `send#assetif`. It changes the properties of `send#assetif` from a normal
 send to a conditional send.
 
 `send#assetif` will only be valid after `send#19BAN previous: 24 hash: 25` has been confirmed.
