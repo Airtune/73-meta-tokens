@@ -8,9 +8,9 @@ Representative field can be represented as a 64-char hex. The hex is split segme
 
 `asset height` is the block height for the frontier receive block for the asset.
 
-`receive height` is the recipient wallet block height + 1. `send#assetif` must be received at `receive height` for the swap to be valid.
+`receive height` is the recipient wallet block height + 1. `receive#assetif` must be at `receive height` for the swap to be valid.
 
-`min raw` is the minimum amount of raw to send back for the swap to be valid. The payment block must immediatly follow the `send#assetif` since any other send/receive/change block will cancel the swap.
+`min raw` is the minimum amount of raw to send back for the swap to be valid. The payment block must immediatly follow the `receive#assetif` since any other send/receive/change block will cancel the swap.
 
 |             | header        | asset height | receive height | min raw                         |
 | ----------- | ------------- | ------------ | -------------- | ------------------------------- |
