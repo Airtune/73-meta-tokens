@@ -2,7 +2,7 @@
 
 ### Representative HEX
 
-Representative field can be represented as a 64-char hex. The hex is split into a 16 static header for detection, 16 char height for for the asset frontier receive block in your wallet, and min raw as the minimum amount to be sent after receiving.
+Representative field can be represented as a 64-char hex. The hex is split segments encoding requirements for a swap.
 
 `ban_1atomicswap` is used as a header to detect `send#assetif` blocks followed by encoded data.
 
