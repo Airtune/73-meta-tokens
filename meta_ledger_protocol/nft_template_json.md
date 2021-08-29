@@ -5,9 +5,7 @@ The NFT template is stored on meta nodes for operational purposes while metadata
 
 ## `change#nft_template` block
 
-A change block `change#nft_template` with an `nft_template_json_representative`.
-
-The `nft_template_json_representative` should not be confused with the `nft_template_block_representative` used in Asset First Send.
+A change block with the `representative` set to `nft_template_representative`.
 
 
 ### `nft_template_representative`
