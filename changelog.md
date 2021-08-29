@@ -3,7 +3,7 @@
 ## v0.1.0
 
 Split specification into multiple files.
-Separated `meta_node_api`, `meta_node_protocol`, and `client_protocol`.
+Separated `meta_node_api`, `meta_ledger_protocol`, and `client_protocol`.
 
 `meta_node_api` is the API for getting ownership info from meta nodes.
 
@@ -29,12 +29,6 @@ Read more in:
 
 
 ### Naming changes
-
-#### ~~Mint NFT~~
-
-Use `mint_asset` and `send_asset` instead to avoid confusion.
-
-----
 
 #### ~~NFT on-chain properties~~ -> nft_template, nft_template.json, nft_template_ipfs_cid
 
