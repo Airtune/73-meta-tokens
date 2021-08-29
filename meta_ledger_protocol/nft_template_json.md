@@ -14,7 +14,7 @@ Banano account with an IPFS v0 CID for an `nft_template.json` encoded in it. Use
 
 2) The `1220` prefix is stripped from the hex.
 
-3) The stripped hex is used as a Banano public to to convert it into a Banano account.
+3) The stripped hex is used as a Banano public key to to convert it into a Banano account.
 
 
 #### Banano account to IPFS v0 CID
