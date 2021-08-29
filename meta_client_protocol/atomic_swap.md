@@ -1,34 +1,53 @@
+# Atomic Swap
+
+A has an asset.
+
+B has 19 BAN.
+
+A and B want to swap the asset and 19 BAN.
+
+
 ## Client Atomic Swap Algorithm:
+
 ### 0) Setup
-* A and B shares all blocks, unsigned, with each other and agree to the trade.
+
+* A and B shares all blocks from `meta_ledger_protocol/atomic_swap.md`, unsigned, with each other and proceed if they both agree to the trade.
 
 
-### 1) Sign and share cancel blocks
-  * B signs `change#abortB` and shares the signed block with A
-  * A signs `send#primeif`, `change#abortA`, `change#cancelA` and shares the signed blocks with B
+### 1) B signs and shares cancel blocks
 
-A and B can now submit `change#abortA` to abort the trade and invalidate `send#primeif`.
+  * B signs `change#abort_receive_atomic_swap`, `change#abort_payment` and shares the signed blocks with A
 
-A and B can now submit `change#abortB` to abort the trade and invalidate `send#19BAN`.
+A and B can now submit `change#abort_receive_atomic_swap` to abort the trade and invalidate `send#atomic_swap`.
+
+A and B can now submit `change#abort_payment` to abort the trade and invalidate `send#payment`.
 
 A and B can now submit `send#primeif` to prime the trade.
 
 
-### 2) A or B submits `send#primeif` and wait for confirmation.
+### 2) A submits `send#atomic_swap`
 
-A and B can now submit `change#cancelA` to cancel the trade and invalidate `send#assetif`
+A signs and submit the `send#atomic_swap`.
 
+A and B can now submit `change#abort_receive_atomic_swap` to abort the trade and invalidate `send#atomic_swap`.
 
-### 3) B submits `send#assetif` and A waits for `send#assetif` confirmation.
-
-If A is unresponsive, B submits `change#abortB` to cancel the trade.
-
-If A submits any other send/receive/change block than `send#19BAN`, the trade is cancelled.
+If B is unresponsive A submits `change#abort_receive_atomic_swap` to unlock the asset.
 
 
-### 4) When `send#assetif` is confirmed, A submits `send#19BAN hash: 25`
+### 3) B submits `receive#atomic_swap`
 
-When `send#19BAN hash: 25` is confirmed then `send#assetif` becomes a valid asset send.
+After `receive#atomic_swap` has been confirmed, A and B can no longer submit `change#abort_receive_atomic_swap`.
+
+A and B can now submit `change#abort_payment` to abort the trade and invalidate `send#atomic_swap`.
+
+If B is unresponsive A submits `change#abort_payment` to unlock the asset.
 
 
-### 5) A submits `receive#asset` like normal to receive the asset
+### 4) B submits `send#payment`
+
+After `receive#atomic_swap` has been confirmed, B submits `send#payment`.
+
+Once `send#payment` is confirmed the Atomic Swap is complete, the asset is unlocked, and the asset ownership is transferred to B.
+
+
+### 5) A submits `receive#payment`

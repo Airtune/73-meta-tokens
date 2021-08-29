@@ -10,9 +10,9 @@ A change block `change#nft_template` with an `nft_template_json_representative`.
 The `nft_template_json_representative` should not be confused with the `nft_template_block_representative` used in Asset First Send.
 
 
-### `nft_template_json_representative`
+### `nft_template_representative`
 
-IPFS v0 CID for an `nft_template.json` encoded as a Banano account.
+Banano account with an IPFS v0 CID for an `nft_template.json` encoded in it.
 
 
 #### IPFS v0 CID to Banano account
@@ -48,13 +48,11 @@ IPFS v0 CID for an `nft_template.json` encoded as a Banano account.
 ```
 
 
-## Validation
+## `nft_template.json` validation
 
-The `change#nft_template` block must be confirmed.
+The `previous` block must be followed by a `#mint_asset` block for the template.
 
-The `previous` field in the `change#nft_template` block must match `previous` in `nft_template.json`.
-
-The `account` field in the `change#nft_template` block must match `issuer` in `nft_template.json`.
+The `account` field for `#mint_asset` blocks must match `issuer` in `nft_template.json`.
 
 The `version` in `nft_template.json` must be supported by the meta node.
 
@@ -94,7 +92,7 @@ If the key `max_supply` is present then the value must be a valid integer equal 
     },
     "previous": {
       "type": "string",
-      "title": "Previous block hash for the template block.",
+      "title": "value of previous for the first #mint_asset block",
       "minLength": 64,
       "maxLength": 64
     },

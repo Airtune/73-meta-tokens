@@ -1,19 +1,21 @@
 # Atomic Swap
 
-## `send#atomic_swap`
+## Blocks
+
+### `send#atomic_swap`
 
 A send block `send#atomic_swap` that has the representative hex value set to Atomic Swap Representative HEX.
 
 The amount of raw or Banano sent is irrelevant so 1 raw is recommended.
 
 
-### Atomic Swap Representative HEX
+#### `atomic_swap_representative`
 
 Representative field can be represented as a 64-char hex. The hex is split segments encoding requirements for a swap.
 
 `ban_1atomicswap` is used as a header to detect `send#atomic_swap` blocks followed by encoded data.
 
-`asset height` is the block height for the frontier receive block for the asset.
+`asset height` is the Banano block height for the frontier block in the asset chain.
 
 `receive height` is the recipient account block height + 1.
 
@@ -25,18 +27,36 @@ Representative field can be represented as a 64-char hex. The hex is split segme
 | hex         | 23559C159E22C | 0000000003   | 000000002F     | 0000017FB3B29F21F77C409E0000000 |
 | value       | 1atomicswap   | block 3      | block 47       | 19 BAN                          |
 
+#### Example `atomic_swap_representative`
 
-## `receive#atomic_swap`
+`ban_1atomicswap11111113i111111qi1113hysu79s3yxy639i111118brw4eym`
+
+
+### `receive#atomic_swap`
 
 Any Banano block receiving `send#atomic_swap` at blockheight `receive height` is a `receive#atomic_swap` block.
 
 
-## `send#payment`
+#### `change#abort_receive_atomic_swap`
+
+To cancel the swap while `receive#atomic_swap` isn't confirmed in the Banano ledger.
+
+`change#abort_receive_atomic_swap` has the block height `receive height` with the same `previous` value as `previous` from `receive#atomic_swap`.
+
+
+### `send#payment`
 
 Any Banano block at blockheight `receive height + 1` immediatly following `receive#atomic_swap` that is paying the sending account of `send#atomic_swap` .
 
 
-## `receive#payment`
+#### `change#abort_payment`
+
+To cancel the swap while `receive#atomic_swap` is confirmed but `send#payment` isn't.
+
+`change#abort_payment` has the block height `receive height + 1` with `previous` set to the block hash of `receive#atomic_swap`.
+
+
+### `receive#payment`
 
 Normal Banano receive.
 
