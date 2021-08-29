@@ -17,7 +17,7 @@ A send block with the `representative` field set to an `nft_template_representat
 This block will mint an asset and send it.
 
 
-## (`receive#mint_asset` **EXPERIMENTAL**)
+## (`receive#mint_asset` ***EXPERIMENTAL***)
 
 A receive block with the `representative` field set to an `nft_template_representative`.
 
