@@ -43,6 +43,7 @@ To cancel the swap while `receive#atomic_swap` isn't confirmed in the Banano led
 
 `change#abort_receive_atomic_swap` has the block height `receive height` with the same `previous` value as `previous` from `receive#atomic_swap`.
 
+----
 
 ### `send#payment`
 
@@ -55,6 +56,7 @@ To cancel the swap while `receive#atomic_swap` is confirmed but `send#payment` i
 
 `change#abort_payment` has the block height `receive height + 1` with `previous` set to the block hash of `receive#atomic_swap`.
 
+----
 
 ### `receive#payment`
 
