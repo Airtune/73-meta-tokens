@@ -11,15 +11,15 @@ The amount of raw or Banano sent is irrelevant so 1 raw is recommended.
 
 #### `atomic_swap_representative`
 
-Representative field can be represented as a 64-char hex. The hex is split segments encoding requirements for a swap.
+Representative field can be represented as a 64-char hex. The hex is split into segments encoding requirements for a swap.
 
-`ban_1atomicswap` is used as a header to detect `send#atomic_swap` blocks followed by encoded data.
+`ban_1atomicswap` is used as a header to detect `send#atomic_swap` blocks containing encoded requirements.
 
-`asset height` is the Banano block height for the frontier block in the asset chain.
+`asset height` is the Banano block height for the frontier block of the asset to swap.
 
-`receive height` is the recipient account block height + 1.
+`receive height` is the recipient's current account block height + 1.
 
-`min raw` is the minimum amount of raw to send back for the swap to be valid. The payment block must immediatly follow the `receive#atomic_swap` since any other send/receive/change block will cancel the swap.
+`min raw` is the minimum amount of raw to send back for the swap to be valid.
 
 |             | header        | asset height | receive height | min raw                         |
 | ----------- | ------------- | ------------ | -------------- | ------------------------------- |
@@ -46,7 +46,7 @@ To cancel the swap while `receive#atomic_swap` isn't confirmed in the Banano led
 
 ### `send#payment`
 
-Any Banano block at blockheight `receive height + 1` immediatly following `receive#atomic_swap` that is paying the sending account of `send#atomic_swap` .
+Any Banano block at blockheight `receive height + 1` immediatly following `receive#atomic_swap` that is sending a payment back to the sending account of `send#atomic_swap`.
 
 
 #### `change#abort_payment`
