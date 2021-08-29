@@ -31,6 +31,7 @@ Representative field can be represented as a 64-char hex. The hex is split into 
 
 `ban_1atomicswap11111113i111111qi1113hysu79s3yxy639i111118brw4eym`
 
+----
 
 ### `receive#atomic_swap`
 
