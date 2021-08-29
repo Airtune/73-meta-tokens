@@ -91,7 +91,7 @@ If the key `max_supply` is present then the value must be a valid integer equal 
     },
     "issuer": {
       "type": "string",
-      "title": "Account minting the NFT on Banano. Used for verification during minting.",
+      "title": "Account submitting the #mint_asset blocks.",
       "minLength": 64,
       "maxLength": 64
     },
