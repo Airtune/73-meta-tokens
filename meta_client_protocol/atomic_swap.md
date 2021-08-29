@@ -20,18 +20,14 @@ A and B want to swap the asset and 19 BAN.
 
 A and B can now submit `change#abort_receive_atomic_swap` to abort the trade and invalidate `send#atomic_swap`.
 
-A and B can now submit `change#abort_payment` to abort the trade and invalidate `send#payment`.
-
-A and B can now submit `send#primeif` to prime the trade.
-
 
 ### 2) A submits `send#atomic_swap`
 
 A signs and submit the `send#atomic_swap`.
 
-A and B can now submit `change#abort_receive_atomic_swap` to abort the trade and invalidate `send#atomic_swap`.
+A and B can now submit `change#abort_receive_atomic_swap` to abort the trade and invalidate `receive#atomic_swap`.
 
-If B is unresponsive A submits `change#abort_receive_atomic_swap` to unlock the asset.
+If B is unresponsive, then A submits `change#abort_receive_atomic_swap` to unlock the asset.
 
 
 ### 3) B submits `receive#atomic_swap`
@@ -40,7 +36,7 @@ After `receive#atomic_swap` has been confirmed, A and B can no longer submit `ch
 
 A and B can now submit `change#abort_payment` to abort the trade and invalidate `send#atomic_swap`.
 
-If B is unresponsive A submits `change#abort_payment` to unlock the asset.
+If B is unresponsive, then A submits `change#abort_payment` to unlock the asset.
 
 
 ### 4) B submits `send#payment`
