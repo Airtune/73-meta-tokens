@@ -3,16 +3,9 @@
 The NFT template is stored on meta nodes for operational purposes while metadata might not be stored be stored on meta nodes.
 
 
-## `change#nft_template` block
-
-A change block `change#nft_template` with an `nft_template_json_representative`.
-
-The `nft_template_json_representative` should not be confused with the `nft_template_block_representative` used in Asset First Send.
-
-
 ### `nft_template_representative`
 
-Banano account with an IPFS v0 CID for an `nft_template.json` encoded in it.
+Banano account with an IPFS v0 CID for an `nft_template.json` encoded in it. Used in `#mint_asset` blocks.
 
 
 #### IPFS v0 CID to Banano account
@@ -21,7 +14,7 @@ Banano account with an IPFS v0 CID for an `nft_template.json` encoded in it.
 
 2) The `1220` prefix is stripped from the hex.
 
-3) The stripped hex is used as a Banano public to to convert it into a Banano account.
+3) The stripped hex is used as a Banano public key to to convert it into a Banano account.
 
 
 #### Banano account to IPFS v0 CID
@@ -98,7 +91,7 @@ If the key `max_supply` is present then the value must be a valid integer equal 
     },
     "issuer": {
       "type": "string",
-      "title": "Account minting the NFT on Banano. Used for verification during minting.",
+      "title": "Account submitting the #mint_asset blocks.",
       "minLength": 64,
       "maxLength": 64
     },
