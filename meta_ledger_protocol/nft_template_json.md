@@ -3,14 +3,9 @@
 The NFT template is stored on meta nodes for operational purposes while metadata might not be stored be stored on meta nodes.
 
 
-## `change#nft_template` block
-
-A change block with the `representative` set to `nft_template_representative`.
-
-
 ### `nft_template_representative`
 
-Banano account with an IPFS v0 CID for an `nft_template.json` encoded in it.
+Banano account with an IPFS v0 CID for an `nft_template.json` encoded in it. Used in `#mint_asset` blocks.
 
 
 #### IPFS v0 CID to Banano account
