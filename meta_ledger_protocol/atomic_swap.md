@@ -11,7 +11,7 @@ The amount of raw or Banano sent is irrelevant so 1 raw is recommended.
 
 #### `atomic_swap_representative`
 
-Representative field can be represented as a 64-char hex. The hex is split into segments encoding requirements for a swap.
+Representative field can be represented as a 64-char hex. The hex is split into segments encoding requirements for the atomic swap.
 
 `ban_1atomicswap` is used as a header to detect `send#atomic_swap` blocks containing encoded requirements.
 
