@@ -7,7 +7,7 @@ Separated `meta_node_api`, `meta_ledger_protocol`, and `client_protocol`.
 
 `meta_node_api` is the API for getting ownership info from meta nodes.
 
-`meta_ledger_protocol` is the protocol for how template and asset data is stored in the Banano ledger and validated.
+`meta_ledger_protocol` is the protocol for how assets are stored, minted, and transferred in the Banano ledger.
 
 `meta_client_protocol` is protocols for things such as how clients verify assets and conduct atomic swaps.
 
