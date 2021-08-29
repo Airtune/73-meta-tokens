@@ -4,7 +4,7 @@
 
 ### `send#atomic_swap`
 
-A send block `send#atomic_swap` that has the representative hex value set to Atomic Swap Representative HEX.
+A send block `send#atomic_swap` that has data encoded in the representative public key hex value.
 
 The amount of raw or Banano sent is irrelevant so 1 raw is recommended.
 
