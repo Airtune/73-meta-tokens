@@ -43,7 +43,9 @@ Banano account with an IPFS v0 CID for an `nft_template.json` encoded in it. Use
 
 ## `nft_template.json` validation
 
-The `previous` block must be followed by a `#mint_asset` block for the template.
+The `previous` block must match the validation in the `nft_header_block.md`.
+
+The `previous` block must be a `#nft_supply` block followed by a `#mint_asset` block for the template.
 
 The `account` field for `#mint_asset` blocks must match `issuer` in `nft_template.json`.
 

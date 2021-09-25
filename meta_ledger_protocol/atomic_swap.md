@@ -1,5 +1,7 @@
 # Atomic Swap
 
+Atomic swap between Banano and an asset.
+
 ## Blocks
 
 ### `send#atomic_swap`
@@ -21,11 +23,11 @@ Representative field can be represented as a 64-char hex. The hex is split into 
 
 `min raw` is the minimum amount of raw to send back for the swap to be valid.
 
-|             | header        | asset height | receive height | min raw                         |
-| ----------- | ------------- | ------------ | -------------- | ------------------------------- |
-| hex length  | 13 chars      | 10 chars     | 10 chars       | 31 chars                        |
-| hex         | 23559C159E22C | 0000000003   | 000000002F     | 0000017FB3B29F21F77C409E0000000 |
-| value       | 1atomicswap   | block 3      | block 47       | 19 BAN                          |
+|             | header          | asset height | receive height | min raw                         |
+| ----------- | --------------- | ------------ | -------------- | ------------------------------- |
+| hex length  | 13 chars        | 10 chars     | 10 chars       | 31 chars                        |
+| hex         | 23559C159E22C   | 0000000003   | 000000002F     | 0000017FB3B29F21F77C409E0000000 |
+| value       | ban_1atomicswap | block 3      | block 47       | 19 BAN                          |
 
 #### Example `atomic_swap_representative`
 
@@ -104,7 +106,7 @@ There's no confirmed block in recipient account at `receive height`.
 
 ##### Attempting to send a locked asset
 
-Trying to send a locked asset will make chains for the asset in the sender account that are undetermined until the atomic swap has been concluded.
+Trying to send a locked asset will make chains on light nodes for the asset that are undetermined until the atomic swap has been concluded.
 
 If the atomic swap was successful then `send#atomic_swap` is treated as a valid send. Subsequent sends will be ignored.
 
