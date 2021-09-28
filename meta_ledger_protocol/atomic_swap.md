@@ -1,4 +1,4 @@
-# Atomic Swap
+# Atomic Swap Meta Ledger Protocol
 
 Atomic swap between Banano and an asset.
 
@@ -17,13 +17,13 @@ Representative field can be represented as a 64-char hex. The hex is split into 
 
 `ban_1atomicswap` is used as a header to detect `send#atomic_swap` blocks containing encoded requirements.
 
-`asset height` is the Banano block height for the frontier block of the asset to swap.
+`asset height` is the Banano block height for the frontier block of the asset to swap. The `asset height` can also refer to a `receive#atomic_swap_delegation` block. For more details see `atomic_swap_delegation`.
 
 `receive height` is the recipient's current account block height + 1.
 
 `min raw` is the minimum amount of raw to send back for the swap to be valid.
 
-|             | header          | asset height | receive height | min raw                         |
+|             | header          | asset height | receive height | min raw (inclusive)             |
 | ----------- | --------------- | ------------ | -------------- | ------------------------------- |
 | hex length  | 13 chars        | 10 chars     | 10 chars       | 31 chars                        |
 | hex         | 23559C159E22C   | 0000000003   | 000000002F     | 0000017FB3B29F21F77C409E0000000 |
@@ -37,7 +37,7 @@ Representative field can be represented as a 64-char hex. The hex is split into 
 
 ### `receive#atomic_swap`
 
-Any Banano block receiving `send#atomic_swap` at blockheight `receive height` is a `receive#atomic_swap` block.
+Any Banano block receiving `send#atomic_swap` at block height `receive height` is a `receive#atomic_swap` block.
 
 
 #### `change#abort_receive_atomic_swap`
@@ -50,7 +50,9 @@ To cancel the swap while `receive#atomic_swap` isn't confirmed in the Banano led
 
 ### `send#payment`
 
-Any Banano block at blockheight `receive height + 1` immediatly following `receive#atomic_swap` that is sending a payment back to the sending account of `send#atomic_swap`.
+Any Banano block at blockheight `receive height + 1` immediately following `receive#atomic_swap` that is sending a payment to the original owner of the asset prior to the swap.
+
+For an `atomic_swap_delegation` the original owner is the delegator, not the delegatee.
 
 
 #### `change#abort_payment`
@@ -76,13 +78,13 @@ Changing representative back to a real representative in this block is recommend
 
 `send#atomic_swap` must be confirmed.
 
-`asset height` in `send#atomic_swap` must refer to a receive block for an asset that is the valid frontier prior to `send#atomic_swap` in the same account.
+`asset height` in `send#atomic_swap` must refer to a valid head block for an asset or a valid `receive#atomic_swap_delegation` block.
 
 `receive#atomic_swap` must be confirmed with blockheight `receive height`.
 
 `send#payment` must be confirmed with blockheight `receive height + 1`.
 
-`send#payment` must have `link` set to the sender of `send#atomic_swap`.
+`send#payment` must have `link` set to the original owner of the asset prior to the swap.
 
 `send#payment` amount of raw must be equal to or larger than `min raw`.
 

@@ -1,32 +1,9 @@
-# NFT Template
+# NFT Template JSON
 
 The NFT template is stored on meta nodes for operational purposes while metadata might not be stored be stored on meta nodes.
 
 
-### `nft_template_representative`
-
-Banano account with an IPFS v0 CID for an `nft_template.json` encoded in it. Used in `#mint_asset` blocks.
-
-
-#### IPFS v0 CID to Banano account
-
-1) The v0 CID is converted from base58 to hex.
-
-2) The `1220` prefix is stripped from the hex.
-
-3) The stripped hex is used as a Banano public key to to convert it into a Banano account.
-
-
-#### Banano account to IPFS v0 CID
-
-1) Extract the hex public key from the Banano account.
-
-2) Prepend `1220` to the public key to convert it to a hex CID.
-
-3) Convert the hex CID to base58.
-
-
-## `nft_template.json` example
+## `nft_template_json` example
 
 ```
 {
@@ -41,21 +18,23 @@ Banano account with an IPFS v0 CID for an `nft_template.json` encoded in it. Use
 ```
 
 
-## `nft_template.json` validation
-
-The `previous` block must match the validation in the `nft_header_block.md`.
+## `nft_template_json` validation
 
 The `previous` block must be a `#nft_supply` block followed by a `#mint_asset` block for the template.
 
-The `account` field for `#mint_asset` blocks must match `issuer` in `nft_template.json`.
+The `previous` block must match the validation specified in `nft_supply_block`.
 
-The `version` in `nft_template.json` must be supported by the meta node.
+The `account` field for `#mint_asset` blocks must match `issuer` in `nft_template_json`.
+
+The `version` in `nft_template_json` must be supported by the meta node and match the version from the `nft_supply_block`.
 
 The `command` must be `"nft_template"`.
 
 If the key `max_supply` isn't present then the supply is unlimited.
 
 If the key `max_supply` is present then the value must be a valid integer equal to or higher than `1`.
+
+If the key `max_supply` is present then the value must match the value of `max supply` from the `nft_supply_block` in referenced to by `previous`
 
 
 ### `nft_template.json` JSON Schema

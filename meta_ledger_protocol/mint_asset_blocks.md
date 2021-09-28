@@ -2,6 +2,8 @@
 
 Several different types of blocks can mint an asset with different behaviour.
 
+The first mint asset block for a template must immediately follow their `#nft_supply` block.
+
 
 ## `change#mint_asset`
 

@@ -15,7 +15,7 @@ An `#nft_supply` block is any block with a `nft_supply_representative` set in th
 
 `MAJOR version`, `MINOR version`, and `PATCH version` is used for semantic versioning of the meta ledger protocol.
 
-`max supply` is used for max supply of NFTs.
+`max supply` is used for max supply of NFTs. Use 0 for unlimited supply.
 
 |             | header                  | MAJOR version  | MINOR version | PATCH version | max supply       |
 | ----------- | ----------------------- | -------------- | ------------- | ------------- | ---------------- |
@@ -35,11 +35,22 @@ Account:
 
 ## Usage
 
-The block immediatly following the `#nft_supply` block, at `#nft_supply block height + 1`, is interpreted as a `#mint_asset` block.
+The block immediately following the `#nft_supply` block, at `#nft_supply block height + 1`, is interpreted as a `#mint_asset` block.
 
 The `representative` field is interpreted as a `nft_template_representative` regardless of it's value.
 
 
-### Cancel after `#nft_supply` block is confirmed
+### `#nft_supply_cancel` after `#nft_supply` block is confirmed
 
-Submit a block with `ban_1nftsupp1ycance1111oops1111that1111was1111my1111bad1hq5sjhey` in the `representative` field immediatly following the `#nft_supply` block.
+Submit a block with `ban_1nftsupp1ycance1111oops1111that1111was1111my1111bad1hq5sjhey` in the `representative` field immediately following the `#nft_supply` block.
+
+
+## Validation
+
+* `nft_supply_representative` must match header: `ban_1nftsupp1ybenis`
+
+* Version must be supported by the meta node.
+
+* Must be followed by a block that isn't a `#nft_supply_cancel` block.
+
+* Must be followed by a block that changes representative.
