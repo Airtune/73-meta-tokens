@@ -20,8 +20,8 @@ An `#nft_supply` block is any block with a `nft_supply_representative` set in th
 |             | header                  | MAJOR version  | MINOR version | PATCH version | max supply       |
 | ----------- | ----------------------- | -------------- | ------------- | ------------- | ---------------- |
 | hex length  | 18 chars                | 10 chars       | 10 chars      | 10 chars      | 16 chars         |
-| hex         | 51BACEED60792CA432      | 0000000001     | 0000000001    | 0000000000    | 000000000000076C |
-| value       | ban_1nftsupp1ybenis     | 0              | 1             | 0             | 1900             |
+| hex         | 51BACEED6078000000      | 0000000001     | 0000000001    | 0000000000    | 000000000000076C |
+| value       | ban_1nftsupp1y11111     | 0              | 1             | 0             | 1900             |
 
 
 ### Example:
@@ -30,7 +30,7 @@ Public key:
 `51BACEED60792CA432000000000100000000010000000000000000000000076C`
 
 Account:
-`ban_1nftsupp1ybenis11111111i1111111i111111111111111113uekda3b1jh`
+`ban_1nftsupp1y1111111111111i1111111i111111111111111113uekda3b1jh`
 
 
 ## Usage
@@ -47,7 +47,7 @@ Submit a block with `ban_1nftsupp1ycance1111oops1111that1111was1111my1111bad1hq5
 
 ## Validation
 
-* `nft_supply_representative` must match header: `ban_1nftsupp1ybenis`
+* `nft_supply_representative` must match header: `ban_1nftsupp1y11111`
 
 * Version must be supported by the meta node.
 
