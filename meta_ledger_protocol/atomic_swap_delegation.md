@@ -19,6 +19,16 @@ Note that the hex the same structure as the `atomic_swap_representative` but wit
 Any Banano block receiving `send#atomic_swap_delegation` at block height `receive height` is a `receive#atomic_swap_delegation` block.
 
 
+#### `change#abort_receive_delegation` block
+
+Any Banano block at `asset height` in the delegatee account that isn't the valid `receive#atomic_swap_delegation`.
+
+
+### `change#cancel_delegation` block
+
+Any Banano block in the delegatee account that isn't a valid atomic swap.
+
+
 ## Validation
 
 `asset height` in `send#atomic_swap_delegation` must refer to a valid head block for an asset.
