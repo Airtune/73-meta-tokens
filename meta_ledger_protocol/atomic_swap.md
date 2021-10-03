@@ -26,12 +26,10 @@ Representative field can be represented as a 64-char hex. The hex is split into 
 |             | header          | asset height | receive height | min raw (inclusive)             |
 | ----------- | --------------- | ------------ | -------------- | ------------------------------- |
 | hex length  | 13 chars        | 10 chars     | 10 chars       | 31 chars                        |
-| hex         | 23559C159E22C   | 0000000003   | 000000002F     | 0000017FB3B29F21F77C409E0000000 |
-| value       | ban_1atomicswap | block 3      | block 47       | 19 BAN                          |
+| hex         | 23559C159E22C   | 0000000001   | 00000001CA     | 0000017FB3B29F21F77C409E0000000 |
+| value       | ban_1atomicswap | block 1      | block 458      | 19 BAN                          |
 
-#### Example `atomic_swap_representative`
-
-`ban_1atomicswap11111113i111111qi1113hysu79s3yxy639i111118brw4eym`
+Example: `ban_1atomicswap11111111i111119711113hysu79s3yxy639i11111cquj6wdh`
 
 ----
 

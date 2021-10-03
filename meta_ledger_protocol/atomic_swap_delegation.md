@@ -8,10 +8,12 @@
 |             | header          | asset height | receive height | min raw (inclusive)             |
 | ----------- | --------------- | ------------ | -------------- | ------------------------------- |
 | hex length  | 13 chars        | 10 chars     | 10 chars       | 31 chars                        |
-| hex         | A3559C159E22C   | 0000000003   | 000000002F     | 0000017FB3B29F21F77C409E0000000 |
-| value       | ban_3atomicswap | block 3      | block 47       | 19 BAN                          |
+| hex         | A3559C159E22C   | 0000000004   | 0000000001     | 0000017FB3B29F21F77C409E0000000 |
+| value       | ban_3atomicswap | block 4      | block 1        | 19 BAN                          |
 
 Note that the hex the same structure as the `atomic_swap_representative` but with a different header (`ban_1atomicswap` for atomic swaps and `ban_3atomicswap` for atomic swap delegation).
+
+Example: `ban_3atomicswap1111111411111111i1113hysu79s3yxy639i11111f6xgxxza`
 
 
 ### `receive#atomic_swap_delegation` block
@@ -24,7 +26,7 @@ Any Banano block receiving `send#atomic_swap_delegation` at block height `receiv
 Any Banano block at `asset height` in the delegatee account that isn't the valid `receive#atomic_swap_delegation`.
 
 
-### `change#cancel_delegation` block
+### `change#abort_delegation` block
 
 Any Banano block in the delegatee account that isn't a valid atomic swap.
 
