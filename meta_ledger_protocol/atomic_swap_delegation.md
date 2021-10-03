@@ -4,14 +4,14 @@
 
 ### `send#atomic_swap_delegation` block
 
-#### `permit_swap_representative`
+#### `atomic_swap_delegation_representative`
 |             | header          | asset height | receive height | min raw (inclusive)             |
 | ----------- | --------------- | ------------ | -------------- | ------------------------------- |
 | hex length  | 13 chars        | 10 chars     | 10 chars       | 31 chars                        |
-| hex         | 59989C359E22C   | 0000000003   | 000000002F     | 0000017FB3B29F21F77C409E0000000 |
-| value       | ban_1permitswap | block 3      | block 47       | 19 BAN                          |
+| hex         | A3559C159E22C   | 0000000003   | 000000002F     | 0000017FB3B29F21F77C409E0000000 |
+| value       | ban_3atomicswap | block 3      | block 47       | 19 BAN                          |
 
-Note that the hex the same structure as the `atomic_swap_representative` but with a different header.
+Note that the hex the same structure as the `atomic_swap_representative` but with a different header (`ban_1atomicswap` for atomic swaps and `ban_3atomicswap` for atomic swap delegation).
 
 
 ### `receive#atomic_swap_delegation` block
