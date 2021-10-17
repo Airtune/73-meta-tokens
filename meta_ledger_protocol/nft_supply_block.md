@@ -20,7 +20,7 @@ An `#nft_supply` block is any block with a `nft_supply_representative` set in th
 |             | header                  | MAJOR version  | MINOR version | PATCH version | max supply       |
 | ----------- | ----------------------- | -------------- | ------------- | ------------- | ---------------- |
 | hex length  | 18 chars                | 10 chars       | 10 chars      | 10 chars      | 16 chars         |
-| hex         | 51BACEED6078000000      | 0000000001     | 0000000001    | 0000000000    | 000000000000076C |
+| hex         | 51BACEED6078000000      | 0000000000     | 0000000001    | 0000000000    | 000000000000076C |
 | value       | ban_1nftsupp1y11111     | 0              | 1             | 0             | 1900             |
 
 
