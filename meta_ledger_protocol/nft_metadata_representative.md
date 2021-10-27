@@ -1,6 +1,6 @@
-# `nft_template_representative`
+# `nft_metadata_representative`
 
-Banano account with an IPFS v0 CID with `nft_template_json` encoded in it. Used in `#mint_asset` blocks.
+Banano account with an IPFS v0 CID with `nft_metadata_json` encoded in it. Used in `#mint_asset` blocks.
 
 
 ## IPFS v0 CID to Banano account

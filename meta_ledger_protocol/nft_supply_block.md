@@ -37,7 +37,7 @@ Account:
 
 The block immediately following the `#nft_supply` block, at `#nft_supply block height + 1`, is interpreted as a `#mint_asset` block.
 
-The `representative` field is interpreted as a `nft_template_representative` regardless of it's value.
+The `representative` field of the `#nft_supply` block is interpreted as a `nft_metadata_representative` regardless of it's value.
 
 
 ### `#nft_supply_cancel` after `#nft_supply` block is confirmed
@@ -54,3 +54,5 @@ Submit a block with `ban_1nftsupp1ycance1111oops1111that1111was1111my1111bad1hq5
 * Must be followed by a block that isn't a `#nft_supply_cancel` block.
 
 * Must be followed by a block that changes representative.
+
+* If `max supply` is 0 then the supply is unlimited.
