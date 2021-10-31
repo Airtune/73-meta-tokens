@@ -1,9 +1,10 @@
-# `nft_metadata_representative`
+# `asset_representative`
 
-Banano account with an IPFS v0 CID with `nft_metadata_json` encoded in it. Used in `#mint_asset` blocks.
+Banano account with an IPFS v0 CID with `asset_json` encoded in it. Used in `#mint` blocks.
 
+## `asset_ipfs_cid`
 
-## IPFS v0 CID to Banano account
+### IPFS v0 CID to Banano account
 
 1) The v0 CID is converted from base58 to hex.
 
@@ -12,7 +13,7 @@ Banano account with an IPFS v0 CID with `nft_metadata_json` encoded in it. Used 
 3) The stripped hex is used as a Banano public key to convert it into a Banano account.
 
 
-## Banano account to IPFS v0 CID
+### Banano account to IPFS v0 CID
 
 1) Extract the hex public key from the Banano account.
 

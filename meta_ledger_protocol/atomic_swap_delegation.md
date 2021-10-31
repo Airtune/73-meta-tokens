@@ -33,7 +33,7 @@ Any Banano block in the delegatee account that isn't a valid atomic swap.
 
 ## Validation
 
-`asset height` in `send#atomic_swap_delegation` must refer to a valid head block for an asset.
+`asset height` in `send#atomic_swap_delegation` must refer to the valid Banano frontier block for an asset meta chain.
 
 `block height` for `receive#atomic_swap_delegation` must match `receive height` in `send#atomic_swap_delegation`.
 

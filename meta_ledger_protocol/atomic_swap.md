@@ -76,13 +76,13 @@ Changing representative back to a real representative in this block is recommend
 
 `send#atomic_swap` must be confirmed.
 
-`asset height` in `send#atomic_swap` must refer to a valid head block for an asset or a valid `receive#atomic_swap_delegation` block.
+`asset height` in `send#atomic_swap` must refer to the valid frontier Banano block for an asset meta chain or a valid `receive#atomic_swap_delegation` block.
 
-`receive#atomic_swap` must be confirmed with blockheight `receive height`.
+`receive#atomic_swap` must be confirmed with block height `receive height`.
 
-`send#payment` must be confirmed with blockheight `receive height + 1`.
+`send#payment` must be confirmed with block height `receive height + 1`.
 
-`send#payment` must have `link` set to the original owner of the asset prior to the swap.
+`send#payment` must be sent to the account that submitted `send#atomic_swap`.
 
 `send#payment` amount of raw must be equal to or larger than `min raw`.
 
