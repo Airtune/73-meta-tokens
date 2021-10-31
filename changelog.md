@@ -2,15 +2,17 @@
 
 ## v0.1.0 proposal 3
 
-rename `mint_asset`                  -> `mint`
-rename `nft_metadata_json`           -> `asset_json`
-rename `nft_metadata_representative` -> `asset_representative`
-rename `nft_metadata_ipfs_cid`       -> `asset_ipfs_cid`
-rename `nft_supply`                  -> `supply`
-rename `nft_supply_block`            -> `supply_block`
-rename `nft_supply_block_hash`       -> `supply_block_hash`
-rename `nft_supply_representative`   -> `supply_representative`
-rename `nft_supply_cancel`           -> `cancel_supply`
+```
+rename mint_asset                  -> mint
+rename nft_metadata_json           -> asset_json
+rename nft_metadata_representative -> asset_representative
+rename nft_metadata_ipfs_cid       -> asset_ipfs_cid
+rename nft_supply                  -> supply
+rename nft_supply_block            -> supply_block
+rename nft_supply_block_hash       -> supply_block_hash
+rename nft_supply_representative   -> supply_representative
+rename nft_supply_cancel           -> cancel_supply
+```
 
 A `#supply` block can be cancelled both by being followed by a `#cancel_supply` block or by another `#supply` block.
 
