@@ -37,7 +37,7 @@ Account:
 
 The block immediately following the `#supply` block, at `#supply block height + 1`, is interpreted as a `#mint` block.
 
-The representative of the first mint block is used as the `asset_representative`.
+The representative of the first mint block is used as the `metadata_representative`.
 
 
 ### `#cancel_supply` after `#supply` block is confirmed

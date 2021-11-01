@@ -3,9 +3,9 @@
 ## v0.1.0 proposal 3
 
 rename `mint_asset`                  -> `mint`
-rename `nft_metadata_json`           -> `asset_json`
-rename `nft_metadata_representative` -> `asset_representative`
-rename `nft_metadata_ipfs_cid`       -> `asset_ipfs_cid`
+rename `nft_metadata_json`           -> `metadata_json`
+rename `nft_metadata_representative` -> `metadata_representative`
+rename `nft_metadata_ipfs_cid`       -> `metadata_ipfs_cid`
 rename `nft_supply`                  -> `supply`
 rename `nft_supply_block`            -> `supply_block`
 rename `nft_supply_block_hash`       -> `supply_block_hash`

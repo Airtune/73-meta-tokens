@@ -2,7 +2,7 @@
 
 Data for the client that isn't required by the meta node.
 
-The IPFS CID for the JSON is encoded in the `asset_representative`.
+The IPFS CID for the JSON is encoded in the `metadata_representative`.
 
 
 ### JSON Example
