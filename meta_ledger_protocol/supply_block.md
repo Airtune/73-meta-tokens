@@ -47,6 +47,21 @@ Submit a block with `ban_1nftsupp1ycance1111oops1111that1111was1111my1111bad1hq5
 Submitting a block with the header: `ban_1nftsupp1y11111...` will also function as a cancel block for the previous `#supply` block
 
 
+### `#finish_supply` block
+
+Makes it so that no new NFTs can be minted from a `#supply` block by putting a `finish_supply_representative` in the `representative` field of any block with block height higher that the supply block.
+
+#### `finish_supply_representative`
+
+|             | header                   | supply block height                      |
+| ----------- | ------------------------ | ---------------------------------------- |
+| hex length  | 24 chars                 | 40 chars                                 |
+| hex         | 3614865E0051BA0033BB581E | 0000000000000000000000000000000000000002 |
+| value       | ban_1finish11nft11supp1y | 2                                        |
+
+Example: `ban_1finish11nft11supp1y11111111111111111111111111111114ig649dj3`
+
+
 ## Validation
 
 * `supply_representative` must match header: `ban_1nftsupp1y11111`

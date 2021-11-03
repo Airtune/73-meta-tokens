@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.1.0 proposal 4
+
+Added a `#finish_supply`. Finish off a `#supply` block so no more NFTs can be minted.
+
+
 ## v0.1.0 proposal 3
 
 ```
