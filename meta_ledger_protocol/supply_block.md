@@ -1,11 +1,11 @@
-# `#supply` block
+# `change#supply` block
 
 A `change#supply` block has a `supply_representative` set in the `representative` field.
 
 
 ## supply_representative
 
-`header` is used for detecting `#supply` blocks.
+`header` is used for detecting `change#supply` blocks.
 
 `MAJOR version`, `MINOR version`, and `PATCH version` is used for semantic versioning of the meta ledger protocol.
 
