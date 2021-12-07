@@ -1,12 +1,6 @@
 # `#supply` block
 
-A `#supply` block is any block with a `supply_representative` set in the `representative` field.
-
-`change#supply`
-
-`send#supply`
-
-`receive#supply`
+A `change#supply` block has a `supply_representative` set in the `representative` field.
 
 
 ## supply_representative
@@ -35,21 +29,21 @@ Account:
 
 ## Usage
 
-The block immediately following the `#supply` block, at `#supply block height + 1`, is interpreted as a `#mint` block.
+The block immediately following the `change#supply` block, at `change#supply block height + 1`, is interpreted as a `#mint` block.
 
 The representative of the first mint block is used as the `metadata_representative`.
 
 
-### `#cancel_supply` after `#supply` block is confirmed
+### `#cancel_supply` after `change#supply` block is confirmed
 
-Submit a block with `ban_1nftsupp1ycance1111oops1111that1111was1111my1111bad1hq5sjhey` in the `representative` field immediately following the `#supply` block.
+Submit a block with `ban_1nftsupp1ycance1111oops1111that1111was1111my1111bad1hq5sjhey` in the `representative` field immediately following the `change#supply` block.
 
-Submitting a block with the header: `ban_1nftsupp1y11111...` will also function as a cancel block for the previous `#supply` block
+Submitting a block with the header for a supply_representative, finish_supply_representative, or atomic_swap_representative will also function as a cancel block for the previous `change#supply` block.
 
 
 ### `#finish_supply` block
 
-Makes it so that no new NFTs can be minted from a `#supply` block by putting a `finish_supply_representative` in the `representative` field of any block with block height higher that the supply block.
+Makes it so that no new NFTs can be minted from a `change#supply` block by putting a `finish_supply_representative` in the `representative` field of any block with block height higher that the supply block.
 
 #### `finish_supply_representative`
 
@@ -68,8 +62,12 @@ Example: `ban_1finish11nft11supp1y11111111111111111111111111111114ig649dj3`
 
 * Meta protocol version must be supported by the meta node.
 
-* Must be followed by a block that isn't a `#cancel_supply` block or a `#supply` block.
+* Must be followed by a block doesn't have the `cancel_supply_representative`.
 
-* Must be followed by a block that changes to representative that isn't a `supply_representative`.
+* Must be followed by a block doesn't have the `supply_representative` header.
+
+* Must be followed by a block doesn't have the `finish_supply_representative` header.
+
+* Must be followed by a block doesn't have the `atomic_swap_representative` header.
 
 * If `max supply` is 0 then the supply is unlimited.
