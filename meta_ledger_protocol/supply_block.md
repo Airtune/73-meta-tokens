@@ -58,9 +58,11 @@ Example: `ban_1finish11nft11supp1y11111111111111111111111111111114ig649dj3`
 
 ## Validation
 
-* `supply_representative` must match header: `ban_1nftsupp1y11111`
+* `supply_representative` must match header exactly: `ban_1nftsupp1y11111`
 
 * Meta protocol version must be supported by the meta node.
+
+* Banano block subtype must be `change`.
 
 * Must be followed by a block doesn't have the `cancel_supply_representative`.
 
