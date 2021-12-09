@@ -64,9 +64,7 @@ Example: `ban_1finish11nft11supp1y11111111111111111111111111111114ig649dj3`
 
 * Banano block subtype must be `change`.
 
-* Must be followed by a valid mint block with a `metadata_representative`
-
-  * Must be followed by a block with the subtype `change` or `send`.
+* Must be followed by a valid `change#mint` or `send#mint` block with a `metadata_representative`
 
   * Must be followed by a mint block that doesn't have the `cancel_supply_representative`.
 
