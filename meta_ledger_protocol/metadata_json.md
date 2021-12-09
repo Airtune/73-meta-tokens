@@ -27,6 +27,6 @@ The IPFS CID for the JSON is encoded in the `metadata_representative`.
 
 ## Validation
 
-The `supply_block_hash` must refer to a valid `change#supply` block followed by a valid `#mint` block for this metadata.
+The `supply_block_hash` must refer to a valid `change#supply` block followed by a valid `#mint` block with the `metadata_representative` for this metadata.
 
 The `change#supply` block must be from the `"issuer"`.
