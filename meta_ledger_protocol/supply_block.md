@@ -76,7 +76,7 @@ Example: `ban_1finish11nft11supp1y11111111111111111111111111111114ig649dj3`
 
   * Must be followed by a mint block that doesn't have the `atomic_swap_delegation_representative` header.
 
-  * Invalid if followed by mint block that with the representative set to a burn account:
+  * Invalid if followed by mint block that with the representative set to one of these burn account:
     ```
     ban_1burnbabyburndiscoinferno111111111111111111111111111aj49sw3w
     ban_1uo1cano1bot1a1pha1616161616161616161616161616161616p3s5tifp
