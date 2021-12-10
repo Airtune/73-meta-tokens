@@ -36,7 +36,7 @@ The representative of the first mint block is used as the `metadata_representati
 
 ### `#cancel_supply` after `change#supply` block is confirmed
 
-Submit a block with `ban_1nftsupp1ycance1111oops1111that1111was1111my1111bad1hq5sjhey` in the `representative` field immediately following the `change#supply` block.
+Submit a block with the `cancel_supply_representative` as `ban_1nftsupp1ycance1111oops1111that1111was1111my1111bad1hq5sjhey` in the `representative` field immediately following the `change#supply` block.
 
 Submitting a block with the header for a supply_representative, finish_supply_representative, or atomic_swap_representative will also function as a cancel block for the previous `change#supply` block.
 
