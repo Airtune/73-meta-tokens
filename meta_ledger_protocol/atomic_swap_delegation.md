@@ -28,7 +28,7 @@ Any Banano block at `asset height` in the delegatee account that isn't the valid
 
 ### `change#abort_delegation` block
 
-Any Banano block in the delegatee account that isn't a valid atomic swap.
+Any Banano block in the delegatee account that isn't a valid `send#atomic_swap`.
 
 
 ## Validation
