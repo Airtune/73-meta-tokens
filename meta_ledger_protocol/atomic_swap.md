@@ -74,11 +74,19 @@ Changing representative back to a real representative in this block is recommend
 
 `send#atomic_swap` representative hex value must be a valid Atomic Swap Representative HEX.
 
+`send#atomic_swap` amount must be 1 raw.
+
 `send#atomic_swap` must be confirmed.
 
 `asset height` in `send#atomic_swap` must refer to the valid frontier Banano block for an asset meta chain or a valid `receive#atomic_swap_delegation` block.
 
 `receive#atomic_swap` must be confirmed with block height `receive height`.
+
+`receive#atomic_swap` must not change representative.
+
+`receive height` must be greater than 1, i.e., the receive block must not be an open block.
+
+Account balance at `receive height - 1` must be greater than `min raw`.
 
 `send#payment` must be confirmed with block height `receive height + 1`.
 
@@ -86,6 +94,7 @@ Changing representative back to a real representative in this block is recommend
 
 `send#payment` amount of raw must be equal to or larger than `min raw`.
 
+`send#payment` must not change representative.
 
 #### Locked Asset
 
