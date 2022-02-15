@@ -78,6 +78,8 @@ Changing representative back to a real representative in this block is recommend
 
 `send#atomic_swap` must be confirmed.
 
+`send#atomic_swap` must not be a send to self, e.g. link must not match sender account.
+
 `asset height` in `send#atomic_swap` must refer to the valid frontier Banano block for an asset meta chain or a valid `receive#atomic_swap_delegation` block.
 
 `receive#atomic_swap` must be confirmed with block height `receive height`.
@@ -95,6 +97,8 @@ Account balance at `receive height - 1` must be greater than `min raw`.
 `send#payment` amount of raw must be equal to or larger than `min raw`.
 
 `send#payment` must not change representative.
+
+`send#payment` must be valid and come before any other action for the other action to be allowed. Following actions can be: `send#asset`, `send#atomic_swap`, or `send#atomic_swap_delegation`.
 
 #### Locked Asset
 

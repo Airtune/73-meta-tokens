@@ -28,12 +28,14 @@ Any Banano block at `asset height` in the delegatee account that isn't the valid
 
 ### `change#abort_delegation` block
 
-Any Banano block in the delegatee account that isn't a valid `send#atomic_swap`.
+Any Banano block in the delegatee account that isn't a valid `send#atomic_swap` following `receive#atomic_swap_delegation`.
 
 
 ## Validation
 
 `asset height` in `send#atomic_swap_delegation` must refer to the valid Banano frontier block for an asset meta chain.
+
+`send#atomic_swap_delegation` must not be a send to self, e.g. link must not match sender account.
 
 `block height` for `receive#atomic_swap_delegation` must match `receive height` in `send#atomic_swap_delegation`.
 
@@ -43,4 +45,4 @@ The `send#atomic_swap` must have equal or greater value of `min raw` compared to
 
 The atomic swap procedure must be valid according to the `atomic_swap` specification.
 
-Any `send#atomic_swap` chain that is conclusively cancelled must be immediately followed by a new valid `send#atomic_swap` or the delegation is considered cancelled.
+Any `send#atomic_swap` chain that is conclusively cancelled must be immediately followed by a new valid `send#atomic_swap` in the delegatee account. Any block other than a valid `send#atomic_swap` block and the delegation is considered cancelled.
