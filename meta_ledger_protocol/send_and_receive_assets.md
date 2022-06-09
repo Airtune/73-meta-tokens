@@ -25,4 +25,4 @@ Any receive block for `send#asset`
 
 `receive#asset` must not be confirmed at a lower block height than `send#asset` in an account for `send#asset` to be valid.
 
-`send#asset` to self (link set to sender account in Banano block) must be received, denoted as `receive#asset`, before any other action is allowed such as `send#asset`, `send#atomic_swap`, or `send#atomic_swap_delegation`.
+`send#asset` to self (link set to sender account in Banano block) must be received, denoted as `receive#asset`, before any other action is allowed such as `send#asset` or `send#atomic_swap`.

@@ -17,7 +17,7 @@ Representative field can be represented as a 64-char hex. The hex is split into 
 
 `ban_1atomicswap` is used as a header to detect `send#atomic_swap` blocks containing encoded requirements.
 
-`asset height` is the Banano block height for the frontier block of the asset to swap. The `asset height` can also refer to a `receive#atomic_swap_delegation` block. For more details see `atomic_swap_delegation`.
+`asset height` is the Banano block height for the frontier block of the asset to swap. The `asset height` can also refer to a `send#payment` block. For more details see `meta_ledger_protocol/atomic_swap`.
 
 `receive height` is the recipient's current account block height + 1.
 
@@ -50,8 +50,7 @@ To cancel the swap while `receive#atomic_swap` isn't confirmed in the Banano led
 
 Any Banano block at blockheight `receive height + 1` immediately following `receive#atomic_swap` that is sending a payment to the original owner of the asset prior to the swap.
 
-For an `atomic_swap_delegation` the original owner is the delegator, not the delegatee.
-
+Once this block is confirmed and validated, the sender is the new owner.
 
 #### `change#abort_payment`
 
@@ -80,7 +79,7 @@ Changing representative back to a real representative in this block is recommend
 
 `send#atomic_swap` must not be a send to self, e.g. link must not match sender account.
 
-`asset height` in `send#atomic_swap` must refer to the valid frontier Banano block for an asset meta chain or a valid `receive#atomic_swap_delegation` block.
+`asset height` in `send#atomic_swap` must refer to the valid frontier Banano block for an asset meta chain.
 
 `receive#atomic_swap` must be confirmed with block height `receive height`.
 
@@ -98,7 +97,7 @@ Account balance at `receive height - 1` must be greater than `min raw`.
 
 `send#payment` must not change representative.
 
-`send#payment` must be valid and come before any other action for the other action to be allowed. Following actions can be: `send#asset`, `send#atomic_swap`, or `send#atomic_swap_delegation`.
+`send#payment` must be valid and come before any other action for the other action to be allowed. Following actions can be: `send#asset` or `send#atomic_swap`.
 
 #### Locked Asset
 

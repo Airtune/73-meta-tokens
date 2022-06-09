@@ -14,17 +14,17 @@ A `change#supply` block has a `supply_representative` set in the `representative
 |             | header                  | MAJOR version  | MINOR version | PATCH version | max supply       |
 | ----------- | ----------------------- | -------------- | ------------- | ------------- | ---------------- |
 | hex length  | 18 chars                | 10 chars       | 10 chars      | 10 chars      | 16 chars         |
-| hex         | 51BACEED6078000000      | 0000000000     | 0000000001    | 0000000000    | 000000000000076C |
-| value       | ban_1nftsupp1y11111     | 0              | 1             | 0             | 1900             |
+| hex         | 51BACEED6078000000      | 0000000001     | 0000000000    | 0000000000    | 000000000000076C |
+| value       | ban_1nftsupp1y11111     | 1              | 0             | 0             | 1900             |
 
 
 ### Example:
 
 Public key:
-`51BACEED6078000000000000000000000000010000000000000000000000076C`
+`51BACEED6078000000000000000100000000000000000000000000000000076C`
 
 Account:
-`ban_1nftsupp1y111111111111111111111i111111111111111113ue4ziwpt86`
+`ban_1nftsupp1y1111111111111i11111111111111111111111113uewzookdka`
 
 
 ## Usage
@@ -60,7 +60,7 @@ Example: `ban_1finish11nft11supp1y11111111111111111111111111111114ig649dj3`
 
 * `supply_representative` must match header exactly: `ban_1nftsupp1y11111`
 
-* Meta protocol version must be supported by the meta node.
+* Meta protocol version must encoded in supply block must be `1.0.0`.
 
 * Banano block subtype must be `change`.
 
@@ -73,8 +73,6 @@ Example: `ban_1finish11nft11supp1y11111111111111111111111111111114ig649dj3`
   * Must be followed by a mint block that doesn't have the `finish_supply_representative` header.
 
   * Must be followed by a mint block that doesn't have the `atomic_swap_representative` header.
-
-  * Must be followed by a mint block that doesn't have the `atomic_swap_delegation_representative` header.
 
   * Invalid if followed by mint block that with the representative set to one of these burn account:
     ```

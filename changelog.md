@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.0 release
+
+Removed delegated atomic swaps. The protocol is now accepted as is and has been tested in production.
+
 ## v0.1.0 proposal 4
 
 Added a `#finish_supply`. Finish off a `#supply` block so no more NFTs can be minted.

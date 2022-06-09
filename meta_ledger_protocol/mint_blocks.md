@@ -24,9 +24,9 @@ This block's hash will be used for the `asset_representative`.
 
 ### `send#mint` validation
 
-The `send#mint` block must be received by a `receive#mint` or `receive#asset` block, which is just a regular receive on Banano, before any other action is allowed such as `send#asset`, `send#atomic_swap`, or `send#atomic_swap_delegation`.
+The `send#mint` block must be received by a `receive#mint` or `receive#asset` block, which is just a regular receive on Banano, before any other action is allowed such as `send#asset` or `send#atomic_swap`.
 
-Self-`send#mint` blocks are allowed, e.g., link matches sender/minter account. Self-`send#mint` blocks must be received before any other action is allowed such as `send#asset`, `send#atomic_swap`, or `send#atomic_swap_delegation`.
+Self-`send#mint` blocks are allowed, e.g., link matches sender/minter account. Self-`send#mint` blocks must be received before any other action is allowed such as `send#asset` or `send#atomic_swap`.
 
 ## `metadata_representative` validation
 
@@ -37,8 +37,6 @@ Self-`send#mint` blocks are allowed, e.g., link matches sender/minter account. S
 * Must not match the `finish_supply_representative` header.
 
 * Must not match the `atomic_swap_representative` header.
-
-* Must not match the `atomic_swap_delegation_representative` header.
 
 * Must not be one of these burn account:
   ```
