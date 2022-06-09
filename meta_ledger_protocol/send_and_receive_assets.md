@@ -5,6 +5,15 @@
 A send block with the `representative` field set to `asset_representative`.
 
 
+## `send#all_nfts` block
+
+A send block with the `representative` field set to `ban_1senda11nfts1111111111111111111111111111111111111111rtbtxits`.
+
+Transfers all assets and not just a specific asset.
+
+Change blocks and receive blocks with this representative are ignored.
+
+
 ### `send#burn` block
 
 A `send#asset` block where the recipient is one of the burn accounts:
